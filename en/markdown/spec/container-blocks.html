@@ -1,0 +1,3461 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5. 容器块 &#8212; myst-book 0.1 documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/default.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "xinetzone/myst-book");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".cell"
+        const thebe_selector_input = ".cell_input div.highlight"
+        const thebe_selector_output = ".cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <link rel="shortcut icon" href="../../_static/page-logo.jfif"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="6. Inlines" href="inlines.html" />
+    <link rel="prev" title="4. 叶块" href="leaf-blocks.html" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+     
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  href="../../posts/atom.xml"
+  title="Blog"
+/>
+ 
+<style type="text/css">
+  ul.ablog-archive {
+    list-style: none;
+    overflow: auto;
+    margin-left: 0px;
+  }
+  ul.ablog-archive li {
+    float: left;
+    margin-right: 5px;
+    font-size: 80%;
+  }
+  ul.postlist a {
+    font-style: italic;
+  }
+  ul.postlist-style-disc {
+    list-style-type: disc;
+  }
+  ul.postlist-style-none {
+    list-style-type: none;
+  }
+  ul.postlist-style-circle {
+    list-style-type: circle;
+  }
+</style>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">myst-book 0.1 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   Markdown 手册
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="index.html">
+     规范
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="intro.html">
+       1. 简介
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="preliminaries.html">
+       2. 扉页
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="blocks-inlines.html">
+       3. 块和内联
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="leaf-blocks.html">
+       4. 叶块
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       5. 容器块
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="inlines.html">
+       6. Inlines
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="appendix.html">
+       7. 附录
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../about/index.html">
+   About
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../CODE_OF_CONDUCT.html">
+     Covenant Code of Conduct
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../CONTRIBUTING.html">
+     Contributing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../SECURITY.html">
+     Security Policy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../CHANGELOG.html">
+     变更日志
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <div>
+版权所有 © 2021 <a href="https://xinetzone.github.io/">xinetzone</a></div>
+<div>由 <a href="https://ebp.jupyterbook.org/">EBP</a> 提供技术支持</div>
+<div>语言切换<a href="/myst-book/">中</a>/<a href="/myst-book/en">英</a></div>
+
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/markdown/spec/container-blocks.md.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/xinetzone/myst-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/xinetzone/myst-book/issues/new?title=Issue%20on%20page%20%2Fmarkdown/spec/container-blocks.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/xinetzone/myst-book/edit/main/docs/markdown/spec/container-blocks.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> 导航
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#block-quotes">
+   5.1. Block quotes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-items">
+   5.2. List items
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#motivation">
+     5.2.1. Motivation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lists">
+   5.3. Lists
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                 <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1><span class="section-number">5. </span>容器块<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>A <a class="reference external" href="#container-blocks">container block</a> is a block that has other
+blocks as its contents.  There are two basic kinds of container blocks:
+[block quotes] and [list items].
+[Lists] are meta-containers for [list items].</p>
+<p>We define the syntax for container blocks recursively.  The general
+form of the definition is:</p>
+<blockquote>
+<div><p>If X is a sequence of blocks, then the result of
+transforming X in such-and-such a way is a container of type Y
+with these blocks as its content.</p>
+</div></blockquote>
+<p>So, we explain what counts as a block quote or list item by explaining
+how these can be <em>generated</em> from their contents. This should suffice
+to define the syntax, although it does not give a recipe for <em>parsing</em>
+these constructions.  (A recipe is provided below in the section entitled
+<a class="reference external" href="#appendix-a-parsing-strategy">A parsing strategy</a>.)</p>
+<div class="section" id="block-quotes">
+<h2><span class="section-number">5.1. </span>Block quotes<a class="headerlink" href="#block-quotes" title="Permalink to this headline">¶</a></h2>
+<p>A <a class="reference external" href="#&#64;">block quote marker</a>,
+optionally preceded by up to three spaces of indentation,
+consists of (a) the character <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> together with a following space of
+indentation, or (b) a single character <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> not followed by a space of
+indentation.</p>
+<p>The following rules define [block quotes]:</p>
+<ol class="simple">
+<li><p><strong>Basic case.</strong>  If a string of lines <em>Ls</em> constitute a sequence
+of blocks <em>Bs</em>, then the result of prepending a [block quote
+marker] to the beginning of each line in <em>Ls</em>
+is a <a class="reference external" href="#block-quotes">block quote</a> containing <em>Bs</em>.</p></li>
+<li><p><strong>Laziness.</strong>  If a string of lines <em>Ls</em> constitute a <a class="reference external" href="#block-quotes">block
+quote</a> with contents <em>Bs</em>, then the result of deleting
+the initial [block quote marker] from one or
+more lines in which the next character other than a space or tab after the
+[block quote marker] is [paragraph continuation
+text] is a block quote with <em>Bs</em> as its content.
+<a class="reference external" href="#&#64;">Paragraph continuation text</a> is text
+that will be parsed as part of the content of a paragraph, but does
+not occur at the beginning of the paragraph.</p></li>
+<li><p><strong>Consecutiveness.</strong>  A document cannot contain two [block
+quotes] in a row unless there is a [blank line] between them.</p></li>
+</ol>
+<p>Nothing else counts as a <a class="reference external" href="#block-quotes">block quote</a>.</p>
+<p>Here is a simple{panels}:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="c1"># Foo</span>
+<span class="o">&gt;</span> <span class="n">bar</span>
+<span class="o">&gt;</span> <span class="n">baz</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">blockquote</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">Foo</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">bar</span>
+<span class="n">baz</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">blockquote</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>The space or tab after the <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> characters can be omitted:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="c1"># Foo</span>
+<span class="o">&gt;</span><span class="n">bar</span>
+<span class="o">&gt;</span> <span class="n">baz</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">blockquote</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">Foo</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">bar</span>
+<span class="n">baz</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">blockquote</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> characters can be preceded by up to three spaces of indentation:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="o">&gt;</span> <span class="c1"># Foo</span>
+   <span class="o">&gt;</span> <span class="n">bar</span>
+ <span class="o">&gt;</span> <span class="n">baz</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">blockquote</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">Foo</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">bar</span>
+<span class="n">baz</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">blockquote</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Four spaces of indentation is too many:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">&gt;</span> <span class="c1"># Foo</span>
+    <span class="o">&gt;</span> <span class="n">bar</span>
+    <span class="o">&gt;</span> <span class="n">baz</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="c1"># Foo</span>
+<span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">bar</span>
+<span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">baz</span>
+<span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>The Laziness clause allows us to omit the <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> before
+paragraph continuation text:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="c1"># Foo</span>
+<span class="o">&gt;</span> <span class="n">bar</span>
+<span class="n">baz</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;blockquote&gt;
+&lt;h1&gt;Foo&lt;/h1&gt;
+&lt;p&gt;bar
+baz&lt;/p&gt;
+&lt;/blockquote&gt;
+```
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>A block quote can contain some lazy and some non-lazy
+continuation lines:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<blockquote>
+<div><p class="card-text">bar
+baz
+foo
+.</p>
+</div></blockquote>
+<blockquote>
+<p>bar
+baz
+foo</p>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Laziness only applies to lines that would have been continuations of
+paragraphs had they been prepended with [block quote markers].
+For{panels}, the <code class="docutils literal notranslate"><span class="pre">&gt;</span> </code> cannot be omitted in the second line of</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="k">&gt; </span><span class="ge">foo</span>
+<span class="k">&gt; </span><span class="ge">---</span>
+</pre></div>
+</div>
+<p>without changing the meaning:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<blockquote>
+<div><p class="card-text">foo</p>
+</div></blockquote>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<p class="card-text">.</p>
+<blockquote>
+<p>foo</p>
+</blockquote>
+<hr />
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Similarly, if we omit the <code class="docutils literal notranslate"><span class="pre">&gt;</span> </code> in the second line of</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="k">&gt; </span><span class="ge">- foo</span>
+<span class="k">&gt; </span><span class="ge">- bar</span>
+</pre></div>
+</div>
+<p>then the block quote ends after the first line:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<blockquote>
+<div><ul class="simple">
+<li><p class="card-text">foo</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p class="card-text">bar
+.</p></li>
+</ul>
+<blockquote>
+<ul>
+<li>foo</li>
+</ul>
+</blockquote>
+<ul>
+<li>bar</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>For the same reason, we can’t omit the <code class="docutils literal notranslate"><span class="pre">&gt;</span> </code> in front of
+subsequent lines of an indented or fenced code block:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>foo
+</pre></div>
+</div>
+</div></blockquote>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bar
+</pre></div>
+</div>
+<p class="card-text">.</p>
+<blockquote>
+<pre><code>foo
+</code></pre>
+</blockquote>
+<pre><code>bar
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div></blockquote>
+<p class="card-text">foo</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span>
+<span class="o">&lt;</span><span class="n">blockquote</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">blockquote</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">foo</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Note that in the following case, we have a [lazy
+continuation line]:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<blockquote>
+<div><p class="card-text">foo
+- bar
+.</p>
+</div></blockquote>
+<blockquote>
+<p>foo
+- bar</p>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>To see why, note that in</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="k">&gt; </span><span class="ge">foo</span>
+<span class="k">&gt; </span><span class="ge">    - bar</span>
+</pre></div>
+</div>
+<p>the <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">bar</span></code> is indented too far to start a list, and can’t
+be an indented code block because indented code blocks cannot
+interrupt paragraphs, so it is [paragraph continuation text].</p>
+<p>A block quote can be empty:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<p class="card-text">.</p>
+<blockquote>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<p class="card-text">.</p>
+<blockquote>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>A block quote can have initial or final blank lines:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<blockquote>
+<div><p class="card-text">foo</p>
+</div></blockquote>
+<p class="card-text">.</p>
+<blockquote>
+<p>foo</p>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>A blank line always separates block quotes:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<blockquote>
+<div><p class="card-text">foo</p>
+</div></blockquote>
+<blockquote>
+<div><p class="card-text">bar
+.</p>
+</div></blockquote>
+<blockquote>
+<p>foo</p>
+</blockquote>
+<blockquote>
+<p>bar</p>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>(Most current Markdown implementations, including John Gruber’s
+original <code class="docutils literal notranslate"><span class="pre">Markdown.pl</span></code>, will parse this{panels} as a single block quote
+with two paragraphs.  But it seems better to allow the author to decide
+whether two block quotes or one are wanted.)</p>
+<p>Consecutiveness means that if we put these block quotes together,
+we get a single block quote:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<blockquote>
+<div><p class="card-text">foo
+bar
+.</p>
+</div></blockquote>
+<blockquote>
+<p>foo
+bar</p>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>To get a block quote with two paragraphs, use:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<blockquote>
+<div><p class="card-text">foo</p>
+<p class="card-text">bar
+.</p>
+</div></blockquote>
+<blockquote>
+<p>foo</p>
+<p>bar</p>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Block quotes can interrupt paragraphs:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<p class="card-text">foo</p>
+<blockquote>
+<div><p class="card-text">bar
+.</p>
+</div></blockquote>
+<p>foo</p>
+<blockquote>
+<p>bar</p>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>In general, blank lines are not needed before or after block
+quotes:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<blockquote>
+<div><p class="card-text">aaa</p>
+</div></blockquote>
+<hr class="docutils" />
+<blockquote>
+<div><p class="card-text">bbb
+.</p>
+</div></blockquote>
+<blockquote>
+<p>aaa</p>
+</blockquote>
+<hr />
+<blockquote>
+<p>bbb</p>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>However, because of laziness, a blank line is needed between
+a block quote and a following paragraph:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<blockquote>
+<div><p class="card-text">bar
+baz
+.</p>
+</div></blockquote>
+<blockquote>
+<p>bar
+baz</p>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<blockquote>
+<div><p class="card-text">bar</p>
+</div></blockquote>
+<p class="card-text">baz
+.</p>
+<blockquote>
+<p>bar</p>
+</blockquote>
+<p>baz</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<blockquote>
+<div><p class="card-text">bar</p>
+</div></blockquote>
+<p class="card-text">baz
+.</p>
+<blockquote>
+<p>bar</p>
+</blockquote>
+<p>baz</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>It is a consequence of the Laziness rule that any number
+of initial <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>s may be omitted on a continuation line of a
+nested block quote:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><p class="card-text">foo
+bar
+.</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>foo
+bar</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><p class="card-text">foo
+bar
+baz
+.</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>foo
+bar
+baz</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>When including an indented code block in a block quote,
+remember that the [block quote marker] includes
+both the <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> and a following space of indentation.  So <em>five spaces</em> are needed
+after the <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>code
+</pre></div>
+</div>
+</div></blockquote>
+<blockquote>
+<div><p class="card-text">not code
+.</p>
+</div></blockquote>
+<blockquote>
+<pre><code>code
+</code></pre>
+</blockquote>
+<blockquote>
+<p>not code</p>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="list-items">
+<h2><span class="section-number">5.2. </span>List items<a class="headerlink" href="#list-items" title="Permalink to this headline">¶</a></h2>
+<p>A <a class="reference external" href="#&#64;">list marker</a> is a
+[bullet list marker] or an [ordered list marker].</p>
+<p>A <a class="reference external" href="#&#64;">bullet list marker</a>
+is a <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">+</span></code>, or <code class="docutils literal notranslate"><span class="pre">*</span></code> character.</p>
+<p>An <a class="reference external" href="#&#64;">ordered list marker</a>
+is a sequence of 1–9 arabic digits (<code class="docutils literal notranslate"><span class="pre">0-9</span></code>), followed by either a
+<code class="docutils literal notranslate"><span class="pre">.</span></code> character or a <code class="docutils literal notranslate"><span class="pre">)</span></code> character.  (The reason for the length
+limit is that with 10 digits we start seeing integer overflows
+in some browsers.)</p>
+<p>The following rules define [list items]:</p>
+<ol>
+<li><p><strong>Basic case.</strong>  If a sequence of lines <em>Ls</em> constitute a sequence of
+blocks <em>Bs</em> starting with a character other than a space or tab, and <em>M</em> is
+a list marker of width <em>W</em> followed by 1 ≤ <em>N</em> ≤ 4 spaces of indentation,
+then the result of prepending <em>M</em> and the following spaces to the first line
+of Ls*, and indenting subsequent lines of <em>Ls</em> by <em>W + N</em> spaces, is a
+list item with <em>Bs</em> as its contents.  The type of the list item
+(bullet or ordered) is determined by the type of its list marker.
+If the list item is ordered, then it is also assigned a start
+number, based on the ordered list marker.</p>
+<p>Exceptions:</p>
+<ol class="simple">
+<li><p>When the first list item in a [list] interrupts
+a paragraph—that is, when it starts on a line that would
+otherwise count as [paragraph continuation text]—then (a)
+the lines <em>Ls</em> must not begin with a blank line, and (b) if
+the list item is ordered, the start number must be 1.</p></li>
+<li><p>If any line is a [thematic break][thematic breaks] then
+that line is not a list item.</p></li>
+</ol>
+</li>
+</ol>
+<p>For{panels}, let <em>Ls</em> be the lines</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<p class="card-text">A paragraph
+with two lines.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>indented code
+</pre></div>
+</div>
+<blockquote>
+<div><p class="card-text">A block quote.
+.</p>
+</div></blockquote>
+<p>A paragraph
+with two lines.</p>
+<pre><code>indented code
+</code></pre>
+<blockquote>
+<p>A block quote.</p>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>And let <em>M</em> be the marker <code class="docutils literal notranslate"><span class="pre">1.</span></code>, and <em>N</em> = 2.  Then rule #1 says
+that the following is an ordered list item with start number 1,
+and the same contents as <em>Ls</em>:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ol>
+<li><p class="card-text">A paragraph
+with two lines.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>indented code
+</pre></div>
+</div>
+<blockquote>
+<div><p class="card-text">A block quote.
+.</p>
+</div></blockquote>
+</li>
+</ol>
+<ol>
+<li>
+<p>A paragraph
+with two lines.</p>
+<pre><code>indented code
+</code></pre>
+<blockquote>
+<p>A block quote.</p>
+</blockquote>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>The most important thing to notice is that the position of
+the text after the list marker determines how much indentation
+is needed in subsequent blocks in the list item.  If the list
+marker takes up two spaces of indentation, and there are three spaces between
+the list marker and the next character other than a space or tab, then blocks
+must be indented five spaces in order to fall under the list
+item.</p>
+<p>Here are some{panels}s showing how far content must be indented to be
+put under the list item:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul class="simple">
+<li><p class="card-text">one</p></li>
+</ul>
+<p class="card-text">two
+.</p>
+<ul>
+<li>one</li>
+</ul>
+<p>two</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul>
+<li><p class="card-text">one</p>
+<p class="card-text">two
+.</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>one</p>
+<p>two</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul class="simple">
+<li><p class="card-text">one</p></li>
+</ul>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> two
+</pre></div>
+</div>
+<p class="card-text">.</p>
+<ul>
+<li>one</li>
+</ul>
+<pre><code> two
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul>
+<li><p class="card-text">one</p>
+<p class="card-text">two
+.</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>one</p>
+<p>two</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>It is tempting to think of this in terms of columns:  the continuation
+blocks must be indented at least to the column of the first character other than
+a space or tab after the list marker.  However, that is not quite right.
+The spaces of indentation after the list marker determine how much relative
+indentation is needed.  Which column this indentation reaches will depend on
+how the list item is embedded in other constructions, as shown by
+this{panels}:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<blockquote>
+<div><blockquote>
+<div><ol>
+<li><p class="card-text">one</p>
+<p class="card-text">two
+.</p>
+</li>
+</ol>
+</div></blockquote>
+</div></blockquote>
+<blockquote>
+<blockquote>
+<ol>
+<li>
+<p>one</p>
+<p>two</p>
+</li>
+</ol>
+</blockquote>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Here <code class="docutils literal notranslate"><span class="pre">two</span></code> occurs in the same column as the list marker <code class="docutils literal notranslate"><span class="pre">1.</span></code>,
+but is actually contained in the list item, because there is
+sufficient indentation after the last containing blockquote marker.</p>
+<p>The converse is also possible.  In the following{panels}, the word <code class="docutils literal notranslate"><span class="pre">two</span></code>
+occurs far to the right of the initial text of the list item, <code class="docutils literal notranslate"><span class="pre">one</span></code>, but
+it is not considered part of the list item, because it is not indented
+far enough past the blockquote marker:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<blockquote>
+<div><blockquote>
+<div><ul class="simple">
+<li><p class="card-text">one</p></li>
+</ul>
+<p class="card-text">two
+.</p>
+</div></blockquote>
+</div></blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>one</li>
+</ul>
+<p>two</p>
+</blockquote>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Note that at least one space or tab is needed between the list marker and
+any following content, so these are not list items:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<p class="card-text">-one</p>
+<p class="card-text">2.two
+.</p>
+<p>-one</p>
+<p>2.two</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>A list item may contain blocks that are separated by more than
+one blank line.</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul>
+<li><p class="card-text">foo</p>
+<p class="card-text">bar
+.</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>foo</p>
+<p>bar</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>A list item may contain any kind of block:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ol>
+<li><p class="card-text">foo</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bar</span>
+</pre></div>
+</div>
+<p class="card-text">baz</p>
+<blockquote>
+<div><p class="card-text">bam
+.</p>
+</div></blockquote>
+</li>
+</ol>
+<ol>
+<li>
+<p>foo</p>
+<pre><code>bar
+</code></pre>
+<p>baz</p>
+<blockquote>
+<p>bam</p>
+</blockquote>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>A list item that contains an indented code block will preserve
+empty lines within the code block verbatim.</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul>
+<li><p class="card-text">Foo</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bar
+
+
+baz
+</pre></div>
+</div>
+</li>
+</ul>
+<p class="card-text">.</p>
+<ul>
+<li>
+<p>Foo</p>
+<pre><code>bar
+<p class="card-text">baz
+</code></pre></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Note that ordered list start numbers must be nine digits or less:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ol class="simple">
+<li><p class="card-text">ok
+.</p></li>
+</ol>
+<ol start="123456789">
+<li>ok</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<p class="card-text">1234567890. not ok
+.</p>
+<p>1234567890. not ok</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>A start number may begin with 0s:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ol class="simple">
+<li><p class="card-text">ok
+.</p></li>
+</ol>
+<ol start="0">
+<li>ok</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ol class="simple">
+<li><p class="card-text">ok
+.</p></li>
+</ol>
+<ol start="3">
+<li>ok</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>A start number may not be negative:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<p class="card-text">-1. not ok
+.</p>
+<p>-1. not ok</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p><strong>Item starting with indented code.</strong>  If a sequence of lines <em>Ls</em>
+constitute a sequence of blocks <em>Bs</em> starting with an indented code
+block, and <em>M</em> is a list marker of width <em>W</em> followed by
+one space of indentation, then the result of prepending <em>M</em> and the
+following space to the first line of <em>Ls</em>, and indenting subsequent lines
+of <em>Ls</em> by <em>W + 1</em> spaces, is a list item with <em>Bs</em> as its contents.
+If a line is empty, then it need not be indented.  The type of the
+list item (bullet or ordered) is determined by the type of its list
+marker.  If the list item is ordered, then it is also assigned a
+start number, based on the ordered list marker.</p></li>
+</ol>
+<p>An indented code block will have to be preceded by four spaces of indentation
+beyond the edge of the region where text will be included in the list item.
+In the following case that is 6 spaces:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul>
+<li><p class="card-text">foo</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bar
+</pre></div>
+</div>
+</li>
+</ul>
+<p class="card-text">.</p>
+<ul>
+<li>
+<p>foo</p>
+<pre><code>bar
+</code></pre>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>And in this case it is 11 spaces:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ol>
+<li><p class="card-text">foo</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bar
+</pre></div>
+</div>
+</li>
+</ol>
+<p class="card-text">.</p>
+<ol start="10">
+<li>
+<p>foo</p>
+<pre><code>bar
+</code></pre>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>If the <em>first</em> block in the list item is an indented code block,
+then by rule #2, the contents must be preceded by <em>one</em> space of indentation
+after the list marker:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>indented code
+</pre></div>
+</div>
+<p class="card-text">paragraph</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>more code
+</pre></div>
+</div>
+<p class="card-text">.</p>
+<pre><code>indented code
+</code></pre>
+<p>paragraph</p>
+<pre><code>more code
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ol>
+<li><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>indented code
+</pre></div>
+</div>
+<p class="card-text">paragraph</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>more code
+</pre></div>
+</div>
+</li>
+</ol>
+<p class="card-text">.</p>
+<ol>
+<li>
+<pre><code>indented code
+</code></pre>
+<p>paragraph</p>
+<pre><code>more code
+</code></pre>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Note that an additional space of indentation is interpreted as space
+inside the code block:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ol>
+<li><div class="highlight-none notranslate"><div class="highlight"><pre><span></span> indented code
+</pre></div>
+</div>
+<p class="card-text">paragraph</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>more code
+</pre></div>
+</div>
+</li>
+</ol>
+<p class="card-text">.</p>
+<ol>
+<li>
+<pre><code> indented code
+</code></pre>
+<p>paragraph</p>
+<pre><code>more code
+</code></pre>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Note that rules #1 and #2 only apply to two cases:  (a) cases
+in which the lines to be included in a list item begin with a
+character other than a space or tab, and (b) cases in which
+they begin with an indented code
+block.  In a case like the following, where the first block begins with
+three spaces of indentation, the rules do not allow us to form a list item by
+indenting the whole thing and prepending a list marker:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<p class="card-text">foo</p>
+<p class="card-text">bar
+.</p>
+<p>foo</p>
+<p>bar</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul class="simple">
+<li><p class="card-text">foo</p></li>
+</ul>
+<p class="card-text">bar
+.</p>
+<ul>
+<li>foo</li>
+</ul>
+<p>bar</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>This is not a significant restriction, because when a block is preceded by up to
+three spaces of indentation, the indentation can always be removed without
+a change in interpretation, allowing rule #1 to be applied.  So, in
+the above case:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul>
+<li><p class="card-text">foo</p>
+<p class="card-text">bar
+.</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>foo</p>
+<p>bar</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p><strong>Item starting with a blank line.</strong>  If a sequence of lines <em>Ls</em>
+starting with a single [blank line] constitute a (possibly empty)
+sequence of blocks <em>Bs</em>, and <em>M</em> is a list marker of width <em>W</em>,
+then the result of prepending <em>M</em> to the first line of <em>Ls</em>, and
+preceding subsequent lines of <em>Ls</em> by <em>W + 1</em> spaces of indentation, is a
+list item with <em>Bs</em> as its contents.
+If a line is empty, then it need not be indented.  The type of the
+list item (bullet or ordered) is determined by the type of its list
+marker.  If the list item is ordered, then it is also assigned a
+start number, based on the ordered list marker.</p></li>
+</ol>
+<p>Here are some list items that start with a blank line but are not empty:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul>
+<li><p class="card-text">foo</p></li>
+<li><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bar</span>
+</pre></div>
+</div>
+</li>
+<li><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>baz
+</pre></div>
+</div>
+</li>
+</ul>
+<p class="card-text">.</p>
+<ul>
+<li>foo</li>
+<li>
+<pre><code>bar
+</code></pre>
+</li>
+<li>
+<pre><code>baz
+</code></pre>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>When the list item starts with a blank line, the number of spaces
+following the list marker doesn’t change the required indentation:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul class="simple">
+<li><p class="card-text">foo
+.</p></li>
+</ul>
+<ul>
+<li>foo</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>A list item can begin with at most one blank line.
+In the following{panels}, <code class="docutils literal notranslate"><span class="pre">foo</span></code> is not part of the list
+item:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul class="simple">
+<li></li>
+</ul>
+<p class="card-text">foo
+.</p>
+<ul>
+<li></li>
+</ul>
+<p>foo</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Here is an empty bullet list item:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul class="simple">
+<li><p class="card-text">foo</p></li>
+<li></li>
+<li><p class="card-text">bar
+.</p></li>
+</ul>
+<ul>
+<li>foo</li>
+<li></li>
+<li>bar</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>It does not matter whether there are spaces or tabs following the [list marker]:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul class="simple">
+<li><p class="card-text">foo</p></li>
+<li></li>
+<li><p class="card-text">bar
+.</p></li>
+</ul>
+<ul>
+<li>foo</li>
+<li></li>
+<li>bar</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Here is an empty ordered list item:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ol class="simple">
+<li><p class="card-text">foo</p></li>
+<li></li>
+<li><p class="card-text">bar
+.</p></li>
+</ol>
+<ol>
+<li>foo</li>
+<li></li>
+<li>bar</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>A list may start or end with an empty list item:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul class="simple">
+<li></li>
+</ul>
+<p class="card-text">.</p>
+<ul>
+<li></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>However, an empty list item cannot interrupt a paragraph:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<p class="card-text">foo
+*</p>
+<p class="card-text">foo
+1.
+.</p>
+<p>foo
+*</p>
+<p>foo
+1.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p><strong>Indentation.</strong>  If a sequence of lines <em>Ls</em> constitutes a list item
+according to rule #1, #2, or #3, then the result of preceding each line
+of <em>Ls</em> by up to three spaces of indentation (the same for each line) also
+constitutes a list item with the same contents and attributes.  If a line is
+empty, then it need not be indented.</p></li>
+</ol>
+<p>Indented one space:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ol>
+<li><p class="card-text">A paragraph
+with two lines.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>indented code
+</pre></div>
+</div>
+<blockquote>
+<div><p class="card-text">A block quote.
+.</p>
+</div></blockquote>
+</li>
+</ol>
+<ol>
+<li>
+<p>A paragraph
+with two lines.</p>
+<pre><code>indented code
+</code></pre>
+<blockquote>
+<p>A block quote.</p>
+</blockquote>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Indented two spaces:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ol>
+<li><p class="card-text">A paragraph
+with two lines.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>indented code
+</pre></div>
+</div>
+<blockquote>
+<div><p class="card-text">A block quote.
+.</p>
+</div></blockquote>
+</li>
+</ol>
+<ol>
+<li>
+<p>A paragraph
+with two lines.</p>
+<pre><code>indented code
+</code></pre>
+<blockquote>
+<p>A block quote.</p>
+</blockquote>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Indented three spaces:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ol>
+<li><p class="card-text">A paragraph
+with two lines.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>indented code
+</pre></div>
+</div>
+<blockquote>
+<div><p class="card-text">A block quote.
+.</p>
+</div></blockquote>
+</li>
+</ol>
+<ol>
+<li>
+<p>A paragraph
+with two lines.</p>
+<pre><code>indented code
+</code></pre>
+<blockquote>
+<p>A block quote.</p>
+</blockquote>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Four spaces indent gives a code block:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1.  A paragraph
+    with two lines.
+
+        indented code
+
+    &gt; A block quote.
+</pre></div>
+</div>
+<p class="card-text">.</p>
+<pre><code>1.  A paragraph
+    with two lines.
+
+        indented code
+
+    &gt; A block quote.
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p><strong>Laziness.</strong>  If a string of lines <em>Ls</em> constitute a <a class="reference external" href="#list-items">list
+item</a> with contents <em>Bs</em>, then the result of deleting
+some or all of the indentation from one or more lines in which the
+next character other than a space or tab after the indentation is
+[paragraph continuation text] is a
+list item with the same contents and attributes.  The unindented
+lines are called
+<a class="reference external" href="#&#64;">lazy continuation line</a>s.</p></li>
+</ol>
+<p>Here is an{panels} with [lazy continuation lines]:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ol>
+<li><p class="card-text">A paragraph
+with two lines.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>indented code
+</pre></div>
+</div>
+<blockquote>
+<div><p class="card-text">A block quote.
+.</p>
+</div></blockquote>
+</li>
+</ol>
+<ol>
+<li>
+<p>A paragraph
+with two lines.</p>
+<pre><code>indented code
+</code></pre>
+<blockquote>
+<p>A block quote.</p>
+</blockquote>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Indentation can be partially deleted:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ol class="simple">
+<li><p class="card-text">A paragraph
+with two lines.
+.</p></li>
+</ol>
+<ol>
+<li>A paragraph
+with two lines.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>These{panels}s show how laziness can work in nested structures:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<blockquote>
+<div><ol>
+<li><blockquote>
+<div><p class="card-text">Blockquote
+continued here.
+.</p>
+</div></blockquote>
+</li>
+</ol>
+</div></blockquote>
+<blockquote>
+<ol>
+<li>
+<blockquote>
+<p>Blockquote
+continued here.</p>
+</blockquote>
+</li>
+</ol>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<blockquote>
+<div><ol>
+<li><blockquote>
+<div><p class="card-text">Blockquote
+continued here.
+.</p>
+</div></blockquote>
+</li>
+</ol>
+</div></blockquote>
+<blockquote>
+<ol>
+<li>
+<blockquote>
+<p>Blockquote
+continued here.</p>
+</blockquote>
+</li>
+</ol>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p><strong>That’s all.</strong> Nothing that is not counted as a list item by rules
+#1–5 counts as a <a class="reference external" href="#list-items">list item</a>.</p></li>
+</ol>
+<p>The rules for sublists follow from the general rules
+[above][List items].  A sublist must be indented the same number
+of spaces of indentation a paragraph would need to be in order to be included
+in the list item.</p>
+<p>So, in this case we need two spaces indent:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul class="simple">
+<li><p class="card-text">foo</p>
+<ul>
+<li><p class="card-text">bar</p>
+<ul>
+<li><p class="card-text">baz</p>
+<ul>
+<li><p class="card-text">boo
+.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>foo
+<ul>
+<li>bar
+<ul>
+<li>baz
+<ul>
+<li>boo</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>One is not enough:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">foo</span>
+ <span class="o">-</span> <span class="n">bar</span>
+  <span class="o">-</span> <span class="n">baz</span>
+   <span class="o">-</span> <span class="n">boo</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">foo</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">bar</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">baz</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">boo</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Here we need four, because the list marker is wider:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span><span class="p">)</span> <span class="n">foo</span>
+    <span class="o">-</span> <span class="n">bar</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">ol</span> <span class="n">start</span><span class="o">=</span><span class="s2">&quot;10&quot;</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">foo</span>
+<span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">bar</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">ol</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Three is not enough:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span><span class="p">)</span> <span class="n">foo</span>
+   <span class="o">-</span> <span class="n">bar</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">ol</span> <span class="n">start</span><span class="o">=</span><span class="s2">&quot;10&quot;</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">foo</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">ol</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">bar</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>A list may be the first block in a list item:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="o">-</span> <span class="n">foo</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">foo</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="o">-</span> <span class="mf">2.</span> <span class="n">foo</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">ol</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ol</span> <span class="n">start</span><span class="o">=</span><span class="s2">&quot;2&quot;</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">foo</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">ol</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">ol</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>A list item can contain a heading:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="c1"># Foo</span>
+<span class="o">-</span> <span class="n">Bar</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<p class="card-text">baz</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">Foo</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span><span class="n">Bar</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+<span class="n">baz</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="motivation">
+<h3><span class="section-number">5.2.1. </span>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h3>
+<p>John Gruber’s Markdown spec says the following about list items:</p>
+<ol class="simple">
+<li><p>“List markers typically start at the left margin, but may be indented
+by up to three spaces. List markers must be followed by one or more
+spaces or a tab.”</p></li>
+<li><p>“To make lists look nice, you can wrap items with hanging indents…
+But if you don’t want to, you don’t have to.”</p></li>
+<li><p>“List items may consist of multiple paragraphs. Each subsequent
+paragraph in a list item must be indented by either 4 spaces or one
+tab.”</p></li>
+<li><p>“It looks nice if you indent every line of the subsequent paragraphs,
+but here again, Markdown will allow you to be lazy.”</p></li>
+<li><p>“To put a blockquote within a list item, the blockquote’s <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>
+delimiters need to be indented.”</p></li>
+<li><p>“To put a code block within a list item, the code block needs to be
+indented twice — 8 spaces or two tabs.”</p></li>
+</ol>
+<p>These rules specify that a paragraph under a list item must be indented
+four spaces (presumably, from the left margin, rather than the start of
+the list marker, but this is not said), and that code under a list item
+must be indented eight spaces instead of the usual four.  They also say
+that a block quote must be indented, but not by how much; however, the
+example given has four spaces indentation.  Although nothing is said
+about other kinds of block-level content, it is certainly reasonable to
+infer that <em>all</em> block elements under a list item, including other
+lists, must be indented four spaces.  This principle has been called the
+<em>four-space rule</em>.</p>
+<p>The four-space rule is clear and principled, and if the reference
+implementation <code class="docutils literal notranslate"><span class="pre">Markdown.pl</span></code> had followed it, it probably would have
+become the standard.  However, <code class="docutils literal notranslate"><span class="pre">Markdown.pl</span></code> allowed paragraphs and
+sublists to start with only two spaces indentation, at least on the
+outer level.  Worse, its behavior was inconsistent: a sublist of an
+outer-level list needed two spaces indentation, but a sublist of this
+sublist needed three spaces.  It is not surprising, then, that different
+implementations of Markdown have developed very different rules for
+determining what comes under a list item.  (Pandoc and python-Markdown,
+for{panels}, stuck with Gruber’s syntax description and the four-space
+rule, while discount, redcarpet, marked, PHP Markdown, and others
+followed <code class="docutils literal notranslate"><span class="pre">Markdown.pl</span></code>’s behavior more closely.)</p>
+<p>Unfortunately, given the divergences between implementations, there
+is no way to give a spec for list items that will be guaranteed not
+to break any existing documents.  However, the spec given here should
+correctly handle lists formatted with either the four-space rule or
+the more forgiving <code class="docutils literal notranslate"><span class="pre">Markdown.pl</span></code> behavior, provided they are laid out
+in a way that is natural for a human to read.</p>
+<p>The strategy here is to let the width and indentation of the list marker
+determine the indentation necessary for blocks to fall under the list
+item, rather than having a fixed and arbitrary number.  The writer can
+think of the body of the list item as a unit which gets indented to the
+right enough to fit the list marker (and any indentation on the list
+marker).  (The laziness rule, #5, then allows continuation lines to be
+unindented if needed.)</p>
+<p>This rule is superior, we claim, to any rule requiring a fixed level of
+indentation from the margin.  The four-space rule is clear but
+unnatural. It is quite unintuitive that</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="k">-</span> foo
+
+  bar
+
+  <span class="k">-</span> baz
+</pre></div>
+</div>
+<p>should be parsed as two lists with an intervening paragraph,</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>foo<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>bar<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>baz<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>as the four-space rule demands, rather than a single list,</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>foo<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>bar<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>baz<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>The choice of four spaces is arbitrary.  It can be learned, but it is
+not likely to be guessed, and it trips up beginners regularly.</p>
+<p>Would it help to adopt a two-space rule?  The problem is that such
+a rule, together with the rule allowing up to three spaces of indentation for
+the initial list marker, allows text that is indented <em>less than</em> the
+original list marker to be included in the list item. For{panels},
+<code class="docutils literal notranslate"><span class="pre">Markdown.pl</span></code> parses</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>   <span class="k">-</span> one
+
+  two
+</pre></div>
+</div>
+<p>as a single list item, with <code class="docutils literal notranslate"><span class="pre">two</span></code> a continuation paragraph:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>one<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>two<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>and similarly</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="k">&gt; </span><span class="ge">  - one</span>
+<span class="k">&gt;</span>
+<span class="ge">&gt;  two</span>
+</pre></div>
+</div>
+<p>as</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">blockquote</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>one<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>two<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">blockquote</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>This is extremely unintuitive.</p>
+<p>Rather than requiring a fixed indent from the margin, we could require
+a fixed indent (say, two spaces, or even one space) from the list marker (which
+may itself be indented).  This proposal would remove the last anomaly
+discussed.  Unlike the spec presented above, it would count the following
+as a list item with a subparagraph, even though the paragraph <code class="docutils literal notranslate"><span class="pre">bar</span></code>
+is not indented as far as the first paragraph <code class="docutils literal notranslate"><span class="pre">foo</span></code>:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span> <span class="k">10.</span> foo
+
+   bar  
+</pre></div>
+</div>
+<p>Arguably this text does read like a list item with <code class="docutils literal notranslate"><span class="pre">bar</span></code> as a subparagraph,
+which may count in favor of the proposal.  However, on this proposal indented
+code would have to be indented six spaces after the list marker.  And this
+would break a lot of existing Markdown, which has the pattern:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="k">1.</span>  foo
+
+        indented code
+</pre></div>
+</div>
+<p>where the code is indented eight spaces.  The spec above, by contrast, will
+parse this text as expected, since the code block’s indentation is measured
+from the beginning of <code class="docutils literal notranslate"><span class="pre">foo</span></code>.</p>
+<p>The one case that needs special treatment is a list item that <em>starts</em>
+with indented code.  How much indentation is required in that case, since
+we don’t have a “first paragraph” to measure from?  Rule #2 simply stipulates
+that in such cases, we require one space indentation from the list marker
+(and then the normal four spaces for the indented code).  This will match the
+four-space rule in cases where the list marker plus its initial indentation
+takes four spaces (a common case), but diverge in other cases.</p>
+</div>
+</div>
+<div class="section" id="lists">
+<h2><span class="section-number">5.3. </span>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h2>
+<p>A <a class="reference external" href="#&#64;">list</a> is a sequence of one or more
+list items [of the same type].  The list items
+may be separated by any number of blank lines.</p>
+<p>Two list items are <a class="reference external" href="#&#64;">of the same type</a>
+if they begin with a [list marker] of the same type.
+Two list markers are of the
+same type if (a) they are bullet list markers using the same character
+(<code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">+</span></code>, or <code class="docutils literal notranslate"><span class="pre">*</span></code>) or (b) they are ordered list numbers with the same
+delimiter (either <code class="docutils literal notranslate"><span class="pre">.</span></code> or <code class="docutils literal notranslate"><span class="pre">)</span></code>).</p>
+<p>A list is an <a class="reference external" href="#&#64;">ordered list</a>
+if its constituent list items begin with
+[ordered list markers], and a
+<a class="reference external" href="#&#64;">bullet list</a> if its constituent list
+items begin with [bullet list markers].</p>
+<p>The <a class="reference external" href="#&#64;">start number</a>
+of an [ordered list] is determined by the list number of
+its initial list item.  The numbers of subsequent list items are
+disregarded.</p>
+<p>A list is <a class="reference external" href="#&#64;">loose</a> if any of its constituent
+list items are separated by blank lines, or if any of its constituent
+list items directly contain two block-level elements with a blank line
+between them.  Otherwise a list is <a class="reference external" href="#&#64;">tight</a>.
+(The difference in HTML output is that paragraphs in a loose list are
+wrapped in <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> tags, while paragraphs in a tight list are not.)</p>
+<p>Changing the bullet or ordered list delimiter starts a new list:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul class="simple">
+<li><p class="card-text">foo</p></li>
+<li><p class="card-text">bar</p></li>
+</ul>
+<ul class="simple">
+<li><p class="card-text">baz
+.</p></li>
+</ul>
+<ul>
+<li>foo</li>
+<li>bar</li>
+</ul>
+<ul>
+<li>baz</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ol class="simple">
+<li><p class="card-text">foo</p></li>
+<li><p class="card-text">bar</p></li>
+</ol>
+<ol class="simple">
+<li><p class="card-text">baz
+.</p></li>
+</ol>
+<ol>
+<li>foo</li>
+<li>bar</li>
+</ol>
+<ol start="3">
+<li>baz</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>In CommonMark, a list can interrupt a paragraph. That is,
+no blank line is needed to separate a paragraph from a following
+list:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<p class="card-text">Foo</p>
+<ul class="simple">
+<li><p class="card-text">bar</p></li>
+<li><p class="card-text">baz
+.</p></li>
+</ul>
+<p>Foo</p>
+<ul>
+<li>bar</li>
+<li>baz</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Markdown.pl</span></code> does not allow this, through fear of triggering a list
+via a numeral in a hard-wrapped line:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>The number of windows in my house is
+<span class="k">14.</span>  The number of doors is 6.
+</pre></div>
+</div>
+<p>Oddly, though, <code class="docutils literal notranslate"><span class="pre">Markdown.pl</span></code> <em>does</em> allow a blockquote to
+interrupt a paragraph, even though the same considerations might
+apply.</p>
+<p>In CommonMark, we do allow lists to interrupt paragraphs, for
+two reasons.  First, it is natural and not uncommon for people
+to start lists without blank lines:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>I need to buy
+<span class="k">-</span> new shoes
+<span class="k">-</span> a coat
+<span class="k">-</span> a plane ticket
+</pre></div>
+</div>
+<p>Second, we are attracted to a</p>
+<blockquote>
+<div><p><a class="reference external" href="#&#64;">principle of uniformity</a>:
+if a chunk of text has a certain
+meaning, it will continue to have the same meaning when put into a
+container block (such as a list item or blockquote).</p>
+</div></blockquote>
+<p>(Indeed, the spec for [list items] and [block quotes] presupposes
+this principle.) This principle implies that if</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>  <span class="k">*</span> I need to buy
+    <span class="k">-</span> new shoes
+    <span class="k">-</span> a coat
+    <span class="k">-</span> a plane ticket
+</pre></div>
+</div>
+<p>is a list item containing a paragraph followed by a nested sublist,
+as all Markdown implementations agree it is (though the paragraph
+may be rendered without <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> tags, since the list is “tight”),
+then</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>I need to buy
+<span class="k">-</span> new shoes
+<span class="k">-</span> a coat
+<span class="k">-</span> a plane ticket
+</pre></div>
+</div>
+<p>by itself should be a paragraph followed by a nested sublist.</p>
+<p>Since it is well established Markdown practice to allow lists to
+interrupt paragraphs inside list items, the [principle of
+uniformity] requires us to allow this outside list items as
+well.  (<a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a>
+takes a different approach, requiring blank lines before lists
+even inside other list items.)</p>
+<p>In order to solve of unwanted lists in paragraphs with
+hard-wrapped numerals, we allow only lists starting with <code class="docutils literal notranslate"><span class="pre">1</span></code> to
+interrupt paragraphs.  Thus,</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<p class="card-text">The number of windows in my house is
+14.  The number of doors is 6.
+.</p>
+<p>The number of windows in my house is
+14.  The number of doors is 6.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>We may still get an unintended result in cases like</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<p class="card-text">The number of windows in my house is</p>
+<ol class="simple">
+<li><p class="card-text">The number of doors is 6.
+.</p></li>
+</ol>
+<p>The number of windows in my house is</p>
+<ol>
+<li>The number of doors is 6.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>but this rule should prevent most spurious list captures.</p>
+<p>There can be any number of blank lines between items:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul class="simple">
+<li><p class="card-text">foo</p></li>
+<li><p class="card-text">bar</p></li>
+<li><p class="card-text">baz
+.</p></li>
+</ul>
+<ul>
+<li>
+<p>foo</p>
+</li>
+<li>
+<p>bar</p>
+</li>
+<li>
+<p>baz</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul>
+<li><p class="card-text">foo</p>
+<ul>
+<li><p class="card-text">bar</p>
+<ul>
+<li><p class="card-text">baz</p>
+<p class="card-text">bim
+.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>foo
+<ul>
+<li>bar
+<ul>
+<li>
+<p>baz</p>
+<p>bim</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>To separate consecutive lists of the same type, or to separate a
+list from an indented code block that would otherwise be parsed
+as a subparagraph of the final list item, you can insert a blank HTML
+comment:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul class="simple">
+<li><p class="card-text">foo</p></li>
+<li><p class="card-text">bar</p></li>
+</ul>
+<!-- -->
+<ul class="simple">
+<li><p class="card-text">baz</p></li>
+<li><p class="card-text">bim
+.</p></li>
+</ul>
+<ul>
+<li>foo</li>
+<li>bar</li>
+</ul>
+<!-- -->
+<ul>
+<li>baz</li>
+<li>bim</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul>
+<li><p class="card-text">foo</p>
+<p class="card-text">notcode</p>
+</li>
+<li><p class="card-text">foo</p></li>
+</ul>
+<!-- -->
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>code
+</pre></div>
+</div>
+<p class="card-text">.</p>
+<ul>
+<li>
+<p>foo</p>
+<p>notcode</p>
+</li>
+<li>
+<p>foo</p>
+</li>
+</ul>
+<!-- -->
+<pre><code>code
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>List items need not be indented to the same level.  The following
+list items will be treated as items at the same list level,
+since none is indented enough to belong to the previous list
+item:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul class="simple">
+<li><p class="card-text">a</p></li>
+<li><p class="card-text">b</p></li>
+<li><p class="card-text">c</p></li>
+<li><p class="card-text">d</p></li>
+<li><p class="card-text">e</p></li>
+<li><p class="card-text">f</p></li>
+<li><p class="card-text">g
+.</p></li>
+</ul>
+<ul>
+<li>a</li>
+<li>b</li>
+<li>c</li>
+<li>d</li>
+<li>e</li>
+<li>f</li>
+<li>g</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ol class="simple">
+<li><p class="card-text">a</p></li>
+<li><p class="card-text">b</p></li>
+<li><p class="card-text">c
+.</p></li>
+</ol>
+<ol>
+<li>
+<p>a</p>
+</li>
+<li>
+<p>b</p>
+</li>
+<li>
+<p>c</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Note, however, that list items may not be preceded by more than
+three spaces of indentation.  Here <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">e</span></code> is treated as a paragraph continuation
+line, because it is indented more than three spaces:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul class="simple">
+<li><p class="card-text">a</p></li>
+<li><p class="card-text">b</p></li>
+<li><p class="card-text">c</p></li>
+<li><p class="card-text">d
+- e
+.</p></li>
+</ul>
+<ul>
+<li>a</li>
+<li>b</li>
+<li>c</li>
+<li>d
+- e</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>And here, <code class="docutils literal notranslate"><span class="pre">3.</span> <span class="pre">c</span></code> is treated as in indented code block,
+because it is indented four spaces and preceded by a
+blank line.</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ol class="simple">
+<li><p class="card-text">a</p></li>
+<li><p class="card-text">b</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>3. c
+</pre></div>
+</div>
+<p class="card-text">.</p>
+<ol>
+<li>
+<p>a</p>
+</li>
+<li>
+<p>b</p>
+</li>
+</ol>
+<pre><code>3. c
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>This is a loose list, because there is a blank line between
+two of the list items:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul class="simple">
+<li><p class="card-text">a</p></li>
+<li><p class="card-text">b</p></li>
+<li><p class="card-text">c
+.</p></li>
+</ul>
+<ul>
+<li>
+<p>a</p>
+</li>
+<li>
+<p>b</p>
+</li>
+<li>
+<p>c</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>So is this, with a empty second item:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul class="simple">
+<li><p class="card-text">a</p></li>
+<li></li>
+<li><p class="card-text">c
+.</p></li>
+</ul>
+<ul>
+<li>
+<p>a</p>
+</li>
+<li></li>
+<li>
+<p>c</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>These are loose lists, even though there are no blank lines between the items,
+because one of the items directly contains two block-level elements
+with a blank line between them:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul>
+<li><p class="card-text">a</p></li>
+<li><p class="card-text">b</p>
+<p class="card-text">c</p>
+</li>
+<li><p class="card-text">d
+.</p></li>
+</ul>
+<ul>
+<li>
+<p>a</p>
+</li>
+<li>
+<p>b</p>
+<p>c</p>
+</li>
+<li>
+<p>d</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul class="simple">
+<li><p class="card-text">a</p></li>
+<li><p class="card-text">b</p></li>
+<li><p class="card-text">d
+.</p></li>
+</ul>
+<ul>
+<li>
+<p>a</p>
+</li>
+<li>
+<p>b</p>
+</li>
+<li>
+<p>d</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>This is a tight list, because the blank lines are in a code block:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul>
+<li><p class="card-text">a</p></li>
+<li><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b</span>
+
+
+</pre></div>
+</div>
+</li>
+<li><p class="card-text">c
+.</p></li>
+</ul>
+<ul>
+<li>a</li>
+<li>
+<pre><code>b
+<p class="card-text"></code></pre></p>
+</li>
+<li>c</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>This is a tight list, because the blank line is between two
+paragraphs of a sublist.  So the sublist is loose while
+the outer list is tight:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul>
+<li><p class="card-text">a</p>
+<ul>
+<li><p class="card-text">b</p>
+<p class="card-text">c</p>
+</li>
+</ul>
+</li>
+<li><p class="card-text">d
+.</p></li>
+</ul>
+<ul>
+<li>a
+<ul>
+<li>
+<p>b</p>
+<p>c</p>
+</li>
+</ul>
+</li>
+<li>d</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>This is a tight list, because the blank line is inside the
+block quote:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul>
+<li><p class="card-text">a</p>
+<blockquote>
+<div><p class="card-text">b</p>
+</div></blockquote>
+</li>
+<li><p class="card-text">c
+.</p></li>
+</ul>
+<ul>
+<li>a
+<blockquote>
+<p>b</p>
+</blockquote>
+</li>
+<li>c</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>This list is tight, because the consecutive block elements
+are not separated by blank lines:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul>
+<li><p class="card-text">a</p>
+<blockquote>
+<div><p class="card-text">b</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span>
+</pre></div>
+</div>
+</li>
+<li><p class="card-text">d
+.</p></li>
+</ul>
+<ul>
+<li>a
+<blockquote>
+<p>b</p>
+</blockquote>
+<pre><code>c
+</code></pre>
+</li>
+<li>d</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>A single-paragraph list is tight:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul class="simple">
+<li><p class="card-text">a
+.</p></li>
+</ul>
+<ul>
+<li>a</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul class="simple">
+<li><p class="card-text">a</p>
+<ul>
+<li><p class="card-text">b
+.</p></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>a
+<ul>
+<li>b</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>This list is loose, because of the blank line between the
+two block elements in the list item:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ol>
+<li><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span>
+</pre></div>
+</div>
+<p class="card-text">bar
+.</p>
+</li>
+</ol>
+<ol>
+<li>
+<pre><code>foo
+</code></pre>
+<p>bar</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Here the outer list is loose, the inner list tight:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul>
+<li><p class="card-text">foo</p>
+<ul class="simple">
+<li><p class="card-text">bar</p></li>
+</ul>
+<p class="card-text">baz
+.</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>foo</p>
+<ul>
+<li>bar</li>
+</ul>
+<p>baz</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<ul class="simple">
+<li><p class="card-text">a</p>
+<ul>
+<li><p class="card-text">b</p></li>
+<li><p class="card-text">c</p></li>
+</ul>
+</li>
+<li><p class="card-text">d</p>
+<ul>
+<li><p class="card-text">e</p></li>
+<li><p class="card-text">f
+.</p></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>a</p>
+<ul>
+<li>b</li>
+<li>c</li>
+</ul>
+</li>
+<li>
+<p>d</p>
+<ul>
+<li>e</li>
+<li>f</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "xinetzone/myst-book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./markdown/spec"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+<div class="section">
+   
+</div>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="leaf-blocks.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">4. </span>叶块</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="inlines.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Inlines</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By xinetzone<br/>
+        
+            &copy; Copyright 2021, xinetzone.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

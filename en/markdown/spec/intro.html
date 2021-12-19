@@ -1,0 +1,627 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. 简介 &#8212; myst-book 0.1 documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/default.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "xinetzone/myst-book");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".cell"
+        const thebe_selector_input = ".cell_input div.highlight"
+        const thebe_selector_output = ".cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <link rel="shortcut icon" href="../../_static/page-logo.jfif"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2. 扉页" href="preliminaries.html" />
+    <link rel="prev" title="规范" href="index.html" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+     
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  href="../../posts/atom.xml"
+  title="Blog"
+/>
+ 
+<style type="text/css">
+  ul.ablog-archive {
+    list-style: none;
+    overflow: auto;
+    margin-left: 0px;
+  }
+  ul.ablog-archive li {
+    float: left;
+    margin-right: 5px;
+    font-size: 80%;
+  }
+  ul.postlist a {
+    font-style: italic;
+  }
+  ul.postlist-style-disc {
+    list-style-type: disc;
+  }
+  ul.postlist-style-none {
+    list-style-type: none;
+  }
+  ul.postlist-style-circle {
+    list-style-type: circle;
+  }
+</style>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">myst-book 0.1 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   Markdown 手册
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="index.html">
+     规范
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       1. 简介
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="preliminaries.html">
+       2. 扉页
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="blocks-inlines.html">
+       3. 块和内联
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="leaf-blocks.html">
+       4. 叶块
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="container-blocks.html">
+       5. 容器块
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="inlines.html">
+       6. Inlines
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="appendix.html">
+       7. 附录
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../about/index.html">
+   About
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../CODE_OF_CONDUCT.html">
+     Covenant Code of Conduct
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../CONTRIBUTING.html">
+     Contributing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../SECURITY.html">
+     Security Policy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../CHANGELOG.html">
+     变更日志
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <div>
+版权所有 © 2021 <a href="https://xinetzone.github.io/">xinetzone</a></div>
+<div>由 <a href="https://ebp.jupyterbook.org/">EBP</a> 提供技术支持</div>
+<div>语言切换<a href="/myst-book/">中</a>/<a href="/myst-book/en">英</a></div>
+
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/markdown/spec/intro.md.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/xinetzone/myst-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/xinetzone/myst-book/issues/new?title=Issue%20on%20page%20%2Fmarkdown/spec/intro.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/xinetzone/myst-book/edit/main/docs/markdown/spec/intro.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> 导航
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   1.1. 为什么需要一个规范？
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   1.2. 关于此文档
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                 <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1><span class="section-number">1. </span>简介<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Markdown 是一种用于编写结构化文档的纯文本格式，基于在电子邮件和 usenet 帖子中指示格式的约定。它由 John Gruber（在 Aaron Swartz 的帮助下）开发，并于 2004 年以 <a class="reference external" href="http://daringfireball.net/projects/markdown/syntax">语法描述</a> 和 Perl 脚本（<code class="docutils literal notranslate"><span class="pre">Markdown.pl</span></code>）的形式发布，用于将 Markdown 转换为 HTML。在接下来的十年里，用多种语言开发了几十种实现。有些人使用脚注、表和其他文档元素的约定扩展了原始的 Markdown 语法。有些允许 Markdown 文档以 HTML 以外的格式呈现。像 Reddit, StackOverflow 和 GitHub 这样的网站有数百万人在使用 Markdown。Markdown 开始在网络之外使用，写书、文章、幻灯片、信件和课堂笔记。</p>
+<p>Markdown 与许多其他轻量级标记语法（它们通常更容易编写）的区别在于它的可读性。正如 Gruber 写道：</p>
+<blockquote>
+<div><p>Markdown 格式语法的首要设计目标是使其可读性尽可能高。其思想是，markdown 格式的文档应该是可以按原样发布的，作为纯文本，而不是看起来像用标记或格式化指令标记的文档。（http://daringfireball.net/projects/markdown/）</p>
+</div></blockquote>
+<p>这一点可以通过比较一个样例的 AsciiDoc 和一个等效的样例 Markdown 来说明：</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-12 docutils">
+<div class="card w-100 border-2 docutils">
+<div class="card-header docutils">
+<p class="card-text">AsciiDoc</p>
+</div>
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1. List item one.
++
+List item one continued with a second paragraph followed by an
+Indented block.
++
+.................
+$ ls *.sh
+$ mv *.sh ~/tmp
+.................
++
+List item continued with a third paragraph.
+
+2. List item two continued with an open block.
++
+--
+This paragraph is part of the preceding list item.
+
+a. This list is nested and does not require explicit item
+continuation.
++
+This paragraph is part of the preceding list item.
+
+b. List item b.
+
+This paragraph belongs to item two of the outer list.
+--
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-12 docutils">
+<div class="card w-100 border-2 docutils">
+<div class="card-header docutils">
+<p class="card-text">Markdown</p>
+</div>
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1.  List item one.
+
+    List item one continued with a second paragraph followed by an
+    Indented block.
+
+        $ ls *.sh
+        $ mv *.sh ~/tmp
+
+    List item continued with a third paragraph.
+
+2.  List item two continued with an open block.
+
+    This paragraph is part of the preceding list item.
+
+    1. This list is nested and does not require explicit item continuation.
+
+       This paragraph is part of the preceding list item.
+
+    2. List item b.
+
+    This paragraph belongs to item two of the outer list.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>可以说，AsciiDoc 版本更容易编写。你不需要担心缩进。但 Markdown 版本更容易阅读。列表项的嵌套在源代码中很明显，而不只是在处理过的文档中。</p>
+<div class="section" id="id2">
+<h2><span class="section-number">1.1. </span>为什么需要一个规范？<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>John Gruber 对 Markdown 语法的规范描述并没有明确地说明语法。以下是一些它无法回答的问题：</p>
+<ol>
+<li><p>一个子列表需要多少缩进？规范说，连续段落需要缩进四个空格，但对于子列表没有完全明确。人们很自然地认为它们也必须缩进四个空格，但 <code class="docutils literal notranslate"><span class="pre">Markdown.pl</span></code> 不要求这样做。这并不是一个“极端情况”，在这个问题上的实现之间的分歧常常会让真实文档中的用户感到惊讶。（参见<a class="reference external" href="http://article.gmane.org/gmane.text.markdown.general/1997"> John Gruber 的评论</a>。）</p></li>
+<li><p>在一个块引号或标题之前需要一个空白行吗？大多数实现不需要空行。然而，这可能会在硬包装文本中导致意想不到的结果，并在解析中产生歧义（注意，一些实现将标题放在 blockquote 中，而另一些没有）。（约翰·格鲁伯(John Gruber) 也表示支持<a class="reference external" href="http://article.gmane.org/gmane.text.markdown.general/2146">要求填写空白行</a>。）</p></li>
+<li><p>在缩进代码块之前需要一个空行吗?（<code class="docutils literal notranslate"><span class="pre">Markdown.pl</span></code> 需要它，但文档中没有提到，而且一些实现不需要它。）</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>paragraph
+    code?
+</pre></div>
+</div>
+</li>
+<li><p>确定列表项在标记中包装的确切规则是什么？一个列表可以部分“松”部分“紧”吗？我们应该怎么处理这样一个列表？</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">one</span>
+
+<span class="mf">2.</span> <span class="n">two</span>
+<span class="mf">3.</span> <span class="n">three</span>
+</pre></div>
+</div>
+<p>或者</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span>  <span class="n">one</span>
+    <span class="o">-</span> <span class="n">a</span>
+
+    <span class="o">-</span> <span class="n">b</span>
+<span class="mf">2.</span>  <span class="n">two</span>
+</pre></div>
+</div>
+<p>（这里有一些<a class="reference external" href="http://article.gmane.org/gmane.text.markdown.general/2554">约翰·格鲁伯的相关评论</a>。）</p>
+</li>
+<li><p>列表标记可以缩进吗？有序列表标记可以右对齐吗？</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="mf">8.</span> <span class="n">item</span> <span class="mi">1</span>
+ <span class="mf">9.</span> <span class="n">item</span> <span class="mi">2</span>
+<span class="mf">10.</span> <span class="n">item</span> <span class="mi">2</span><span class="n">a</span>
+</pre></div>
+</div>
+</li>
+<li><p>这是一个在第二个项目中带有主题中断的列表，还是两个列表之间由一个主题中断分开？</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">a</span>
+<span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span>
+<span class="o">*</span> <span class="n">b</span>
+</pre></div>
+</div>
+</li>
+<li><p>当列表标记从数字变为项目符号时，我们有两个列表还是一个列表？（Markdown 语法描述建议有两个，但 perl 脚本和许多其他实现会产生一个。）</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">fee</span>
+<span class="mf">2.</span> <span class="n">fie</span>
+<span class="o">-</span>  <span class="n">foe</span>
+<span class="o">-</span>  <span class="n">fum</span>
+</pre></div>
+</div>
+</li>
+<li><p>内联结构标记的优先级规则是什么？例如，下面的链接是有效的吗？还是代码范围优先？</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[a backtick (`)](/url) and [another backtick (`)](/url).
+</pre></div>
+</div>
+</li>
+<li><p>emphasis 标记和 strong emphasis 标记的优先规则是什么？例如，应该如何解析以下内容？</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span><span class="n">foo</span> <span class="o">*</span><span class="n">bar</span><span class="o">*</span> <span class="n">baz</span><span class="o">*</span>
+</pre></div>
+</div>
+</li>
+<li><p>块级和内联级结构之间的优先规则是什么？例如，应该如何解析以下内容？</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>- `a long code span can contain a hyphen like this
+- and it can screw things up`
+</pre></div>
+</div>
+</li>
+<li><p>列表项目可以包括 section 标题吗？（<code class="docutils literal notranslate"><span class="pre">Markdown.pl</span></code> 不允许这样做，但允许块引号包含标题。）</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="c1"># Heading</span>
+</pre></div>
+</div>
+</li>
+<li><p>列表项目可以是空的吗？</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">a</span>
+<span class="o">*</span>
+<span class="o">*</span> <span class="n">b</span>
+</pre></div>
+</div>
+</li>
+<li><p>链接引用可以在块引号或列表项中定义吗？</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">Blockquote</span> <span class="p">[</span><span class="n">foo</span><span class="p">]</span><span class="o">.</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span> <span class="p">[</span><span class="n">foo</span><span class="p">]:</span> <span class="o">/</span><span class="n">url</span>
+</pre></div>
+</div>
+</li>
+<li><p>如果同一个引用有多个定义，哪个优先？</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">foo</span><span class="p">]:</span> <span class="o">/</span><span class="n">url1</span>
+<span class="p">[</span><span class="n">foo</span><span class="p">]:</span> <span class="o">/</span><span class="n">url2</span>
+
+<span class="p">[</span><span class="n">foo</span><span class="p">][]</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>在没有规范的情况下，早期的实现人员参考 <code class="docutils literal notranslate"><span class="pre">Markdown.pl</span></code> 来解决这些歧义。但是 <code class="docutils literal notranslate"><span class="pre">Markdown.pl</span></code> 有很多 bug，在很多情况下会给出很糟糕的结果，所以它并不是规范的满意替代品。</p>
+<p>因为没有明确的规范，实现有很大的差异。因此，用户经常会惊讶地发现，在一个系统上以一种方式呈现的文档（例如，GitHub wiki）在另一个系统上呈现的方式不同（例如，使用 pandoc 转换为 docbook）。更糟糕的是，由于 Markdown 中没有什么可以算作“语法错误”，这种差异通常不会马上被发现。</p>
+</div>
+<div class="section" id="id3">
+<h2><span class="section-number">1.2. </span>关于此文档<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>本文试图明确地指定 Markdown 语法。它包含了许多使用并排 Markdown 和 HTML 的示例。这些测试的目的是作为一致性测试。附带的脚本 <a class="reference external" href="https://github.com/commonmark/commonmark-spec/blob/master/test/spec_tests.py"><code class="docutils literal notranslate"><span class="pre">spec_tests.py</span></code></a> 可用于对任何 Markdown 程序运行测试：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python test/spec_tests.py --spec spec.txt --program PROGRAM
+</pre></div>
+</div>
+<p>由于本文档描述了如何将 Markdown 解析为抽象语法树，所以使用语法树的抽象表示而不是 HTML 是有意义的。但是 HTML 能够表示我们需要做出的结构上的区别，并且选择 HTML 作为测试，使得在不编写抽象语法树渲染器的情况下运行针对实现的测试成为可能。</p>
+<p>注意，规范并不是强制要求 HTML 示例的每一个特性，例如，规范规定了什么算作链接目的地，但它没有强制要求 URL 中的非 ascii 字符采用百分比编码。要使用自动测试，需要提供一个符合规范示例（url 中百分比编码的非 ascii 字符）的呈现程序。但是符合标准的实现可以使用不同的渲染器，并且可以选择不对 url 中的非 ascii 字符进行百分比编码。</p>
+<p>该文档是从一个文本文件 <code class="docutils literal notranslate"><span class="pre">spec.txt</span></code> 生成的，该文件用 Markdown 编写，带有一个用于并排测试的小扩展名。脚本工具 <code class="docutils literal notranslate"><span class="pre">tools/makespec.py</span></code> 可以用来将 <code class="docutils literal notranslate"><span class="pre">spec.txt</span></code> 转换为 HTML 或 CommonMark（然后可以转换为其他格式）。</p>
+<p>在示例中，→ 字符用于表示制表符。</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "xinetzone/myst-book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./markdown/spec"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+<div class="section">
+   
+</div>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">规范</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="preliminaries.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>扉页</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By xinetzone<br/>
+        
+            &copy; Copyright 2021, xinetzone.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
