@@ -5,7 +5,7 @@
 :maxdepth: 2
 :hidden:
 
-start/index
+markdown/index
 about/index
 ```
 
