@@ -6,6 +6,7 @@
 :hidden:
 
 markdown/index
+refs/index
 about/index
 ```
 

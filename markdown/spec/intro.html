@@ -92,7 +92,7 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="shortcut icon" href="../../_static/page-logo.jfif"/>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="2. 扉页" href="preliminaries.html" />
+    <link rel="next" title="2. 预备知识" href="preliminaries.html" />
     <link rel="prev" title="规范" href="index.html" /> 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="zh_CN">
@@ -173,6 +173,11 @@ commentsRunWhenDOMLoaded(addUtterances);
    </i>
   </label>
   <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../start/index.html">
+     快速入门
+    </a>
+   </li>
    <li class="toctree-l2 current active has-children">
     <a class="reference internal" href="index.html">
      规范
@@ -190,7 +195,7 @@ commentsRunWhenDOMLoaded(addUtterances);
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="preliminaries.html">
-       2. 扉页
+       2. 预备知识
       </a>
      </li>
      <li class="toctree-l3">
@@ -223,11 +228,28 @@ commentsRunWhenDOMLoaded(addUtterances);
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../about/index.html">
-   关于
+  <a class="reference internal" href="../../refs/index.html">
+   参考
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../refs/glossary.html">
+     术语表
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../about/index.html">
+   关于
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -454,7 +476,7 @@ This paragraph belongs to item two of the outer list.
 <p>John Gruber 对 Markdown 语法的规范描述并没有明确地说明语法。以下是一些它无法回答的问题：</p>
 <ol>
 <li><p>一个子列表需要多少缩进？规范说，连续段落需要缩进四个空格，但对于子列表没有完全明确。人们很自然地认为它们也必须缩进四个空格，但 <code class="docutils literal notranslate"><span class="pre">Markdown.pl</span></code> 不要求这样做。这并不是一个“极端情况”，在这个问题上的实现之间的分歧常常会让真实文档中的用户感到惊讶。（参见<a class="reference external" href="http://article.gmane.org/gmane.text.markdown.general/1997"> John Gruber 的评论</a>。）</p></li>
-<li><p>在一个块引号或标题之前需要一个空白行吗？大多数实现不需要空行。然而，这可能会在硬包装文本中导致意想不到的结果，并在解析中产生歧义（注意，一些实现将标题放在 blockquote 中，而另一些没有）。（约翰·格鲁伯(John Gruber) 也表示支持<a class="reference external" href="http://article.gmane.org/gmane.text.markdown.general/2146">要求填写空白行</a>。）</p></li>
+<li><p>在一个块引用或标题之前需要一个空白行吗？大多数实现不需要空行。然而，这可能会在硬包装文本中导致意想不到的结果，并在解析中产生歧义（注意，一些实现将标题放在 blockquote 中，而另一些没有）。（约翰·格鲁伯(John Gruber) 也表示支持<a class="reference external" href="http://article.gmane.org/gmane.text.markdown.general/2146">要求填写空白行</a>。）</p></li>
 <li><p>在缩进代码块之前需要一个空行吗?（<code class="docutils literal notranslate"><span class="pre">Markdown.pl</span></code> 需要它，但文档中没有提到，而且一些实现不需要它。）</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>paragraph
     code?
@@ -516,7 +538,7 @@ This paragraph belongs to item two of the outer list.
 </pre></div>
 </div>
 </li>
-<li><p>列表项目可以包括 section 标题吗？（<code class="docutils literal notranslate"><span class="pre">Markdown.pl</span></code> 不允许这样做，但允许块引号包含标题。）</p>
+<li><p>列表项目可以包括 section 标题吗？（<code class="docutils literal notranslate"><span class="pre">Markdown.pl</span></code> 不允许这样做，但允许块引用包含标题。）</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="c1"># Heading</span>
 </pre></div>
 </div>
@@ -528,7 +550,7 @@ This paragraph belongs to item two of the outer list.
 </pre></div>
 </div>
 </li>
-<li><p>链接引用可以在块引号或列表项中定义吗？</p>
+<li><p>链接引用可以在块引用或列表项中定义吗？</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">Blockquote</span> <span class="p">[</span><span class="n">foo</span><span class="p">]</span><span class="o">.</span>
 <span class="o">&gt;</span>
 <span class="o">&gt;</span> <span class="p">[</span><span class="n">foo</span><span class="p">]:</span> <span class="o">/</span><span class="n">url</span>
@@ -598,7 +620,7 @@ This paragraph belongs to item two of the outer list.
     <a class='right-next' id="next-link" href="preliminaries.html" title="下一页 页">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">下一页</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>扉页</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>预备知识</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

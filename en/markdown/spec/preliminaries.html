@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2. 扉页 &#8212; myst-book 0.1 documentation</title>
+    <title>2. 预备知识 &#8212; myst-book 0.1 documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -172,6 +172,11 @@ commentsRunWhenDOMLoaded(addUtterances);
    </i>
   </label>
   <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../start/index.html">
+     快速入门
+    </a>
+   </li>
    <li class="toctree-l2 current active has-children">
     <a class="reference internal" href="index.html">
      规范
@@ -189,7 +194,7 @@ commentsRunWhenDOMLoaded(addUtterances);
      </li>
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
-       2. 扉页
+       2. 预备知识
       </a>
      </li>
      <li class="toctree-l3">
@@ -222,11 +227,28 @@ commentsRunWhenDOMLoaded(addUtterances);
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../about/index.html">
-   About
+  <a class="reference internal" href="../../refs/index.html">
+   参考
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../refs/glossary.html">
+     术语表
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../about/index.html">
+   About
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -382,15 +404,15 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1><span class="section-number">2. </span>扉页<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2. </span>预备知识<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id2">
 <h2><span class="section-number">2.1. </span>字符和行<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>任何字符序列都是有效的 CommonMark 文档。</p>
 <dl class="simple myst">
-<dt>字符</dt><dd><p>一个 <strong>字符</strong> 是一个 Unicode 码位。尽管一些代码点（例如，组合重音）在直观意义上与字符不对应，但在本规范中，所有代码点都被视为字符。</p>
-<p>本规范没有指定编码方式；它认为行是是由 <strong>字符</strong> 而不是字节组成的。符合标准的解析器可能被限制为特定的编码。</p>
+<dt>字符</dt><dd><p>一个 <a class="reference internal" href="../../refs/glossary.html#term-0"><span class="xref std std-term">字符</span></a> 是一个 Unicode <a class="reference internal" href="../../refs/glossary.html#term-4"><span class="xref std std-term">码点</span></a>。尽管一些 <a class="reference internal" href="../../refs/glossary.html#term-4"><span class="xref std std-term">码点</span></a> （例如，组合重音）在直观意义上与字符不对应，但在本规范中，所有 <a class="reference internal" href="../../refs/glossary.html#term-4"><span class="xref std std-term">码点</span></a> 都被视为字符。</p>
+<p>本规范没有指定编码方式；它认为 <em class="dfn">行</em> 是是由 <strong>字符</strong> 而不是字节组成的。符合标准的解析器可能被限制为特定的编码。</p>
 </dd>
-<dt>行</dt><dd><p><strong>行</strong> 是一个由 0 个或多个字符组成的序列，而不是换行（<code class="docutils literal notranslate"><span class="pre">U+000A</span></code>）或回车（<code class="docutils literal notranslate"><span class="pre">U+000D</span></code>），后面跟着 <strong>行结束符</strong> 或文件结束符。</p>
+<dt>行</dt><dd><p><strong>行</strong> 是一个由 0 个或多个字符组成的序列（而不是换行（<code class="docutils literal notranslate"><span class="pre">U+000A</span></code>）或回车（<code class="docutils literal notranslate"><span class="pre">U+000D</span></code>）），后面跟着 <strong>行结束符</strong> 或文件结束符。</p>
 </dd>
 <dt>行结束符</dt><dd><p><strong>行结束符</strong>（line ending） 是换行符（<code class="docutils literal notranslate"><span class="pre">U+000A</span></code>），回车符（<code class="docutils literal notranslate"><span class="pre">U+000D</span></code>）后面没有换行符，或者回车符后面有换行符。</p>
 </dd>
@@ -399,7 +421,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </dl>
 <p>本规范将使用以下字符类的定义：</p>
 <dl class="simple myst">
-<dt>Unicode 空白字符</dt><dd><p>Unicode 空白字符（Unicode whitespace character）是 Unicode <code class="docutils literal notranslate"><span class="pre">Zs</span></code> 一般类别中的任何代码点，或者制表符（<code class="docutils literal notranslate"><span class="pre">U+0009</span></code>）、换行符（<code class="docutils literal notranslate"><span class="pre">U+000A</span></code>）、换行符（<code class="docutils literal notranslate"><span class="pre">U+000C</span></code>）或回车符（<code class="docutils literal notranslate"><span class="pre">U+000D</span></code>）。</p>
+<dt>Unicode 空白字符</dt><dd><p>Unicode 空白字符（Unicode whitespace character）是 Unicode <code class="docutils literal notranslate"><span class="pre">Zs</span></code> 一般类别中的任何 <a class="reference internal" href="../../refs/glossary.html#term-4"><span class="xref std std-term">码点</span></a>，或者制表符（<code class="docutils literal notranslate"><span class="pre">U+0009</span></code>）、换行符（<code class="docutils literal notranslate"><span class="pre">U+000A</span></code>）、换行符（<code class="docutils literal notranslate"><span class="pre">U+000C</span></code>）或回车符（<code class="docutils literal notranslate"><span class="pre">U+000D</span></code>）。</p>
 </dd>
 <dt>Unicode 空白符</dt><dd><p>Unicode 空白符（Unicode whitespace）是一个或多个 Unicode 空白字符的序列。</p>
 </dd>
@@ -1174,7 +1196,7 @@ foo
 <li><p>实体和字符引用不能代替在 CommonMark 中定义结构元素的特殊字符。虽然 <code class="docutils literal notranslate"><span class="pre">&amp;#42;</span></code> 可以代替 <code class="docutils literal notranslate"><span class="pre">*</span></code> 字符，但 <code class="docutils literal notranslate"><span class="pre">&amp;#42;</span></code> 不能代替强调分隔符、项目符号列表标记或主题中断中的 <code class="docutils literal notranslate"><span class="pre">*</span></code>。</p></li>
 </ul>
 <p>统一的 CommonMark 解析器不需要存储关于源文件中是否使用 Unicode 字符或实体引用表示特定字符的信息。</p>
-<p>实体引用由 <code class="docutils literal notranslate"><span class="pre">&amp;#</span></code> + 任何有效的 HTML5 实体名称 + <code class="docutils literal notranslate"><span class="pre">;</span></code> 组成。文档 <a class="reference external" href="https://html.spec.whatwg.org/entities.json">https://html.spec.whatwg.org/entities.json</a> 被用作有效实体引用及其相应代码点的权威源代码。</p>
+<p>实体引用由 <code class="docutils literal notranslate"><span class="pre">&amp;#</span></code> + 任何有效的 HTML5 实体名称 + <code class="docutils literal notranslate"><span class="pre">;</span></code> 组成。文档 <a class="reference external" href="https://html.spec.whatwg.org/entities.json">https://html.spec.whatwg.org/entities.json</a> 被用作有效实体引用及其相应 <a class="reference internal" href="../../refs/glossary.html#term-4"><span class="xref std std-term">码点</span></a> 的权威源代码。</p>
 <div class="sphinx-bs container pb-4 docutils">
 <div class="row docutils">
 <div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
@@ -1201,7 +1223,7 @@ foo
 </div>
 </div>
 </div>
-<p>十进制数字字符引用由 <code class="docutils literal notranslate"><span class="pre">&amp;#</span></code> + 1-7 个阿拉伯数字的字符串 + <code class="docutils literal notranslate"><span class="pre">;</span></code> 组成。数字字符引用被解析为对应的 Unicode 字符。无效的 Unicode 码位将被替换为替换字符（<code class="docutils literal notranslate"><span class="pre">U+FFFD</span></code>）。出于安全原因，代码点 <code class="docutils literal notranslate"><span class="pre">U+0000</span></code> 也将被 <code class="docutils literal notranslate"><span class="pre">U+FFFD</span></code> 取代。</p>
+<p>十进制数字字符引用由 <code class="docutils literal notranslate"><span class="pre">&amp;#</span></code> + 1-7 个阿拉伯数字的字符串 + <code class="docutils literal notranslate"><span class="pre">;</span></code> 组成。数字字符引用被解析为对应的 Unicode 字符。无效的 Unicode 码位将被替换为替换字符（<code class="docutils literal notranslate"><span class="pre">U+FFFD</span></code>）。出于安全原因，<a class="reference internal" href="../../refs/glossary.html#term-4"><span class="xref std std-term">码点</span></a>  <code class="docutils literal notranslate"><span class="pre">U+0000</span></code> 也将被 <code class="docutils literal notranslate"><span class="pre">U+FFFD</span></code> 取代。</p>
 <div class="sphinx-bs container pb-4 docutils">
 <div class="row docutils">
 <div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
