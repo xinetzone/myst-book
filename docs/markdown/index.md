@@ -7,5 +7,6 @@
 ```{toctree}
 :maxdepth: 3
 
+start/index
 spec/index
 ```
